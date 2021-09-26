@@ -1,15 +1,15 @@
 Jenkinsfile (Declarative Pipeline)
 pipeline {
-    
-    stages {
-        stage('build') {
-            agent { 
+    agent { 
                 docker { 
                     image 'python:3.5.1'
                      }
                  }
+    stages {
+        stage('build') {
+            
             steps {
-                sh 'python --version python_homework1.py'
+                sh 'python3 install -r requirements.txt'
             }
         }
     }

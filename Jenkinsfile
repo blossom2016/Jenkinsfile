@@ -1,15 +1,18 @@
-Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent { 
-                docker { 
-                    image 'python:3.5.1'
-                     }
-                 }
+    agent any
+
     stages {
         stage('build') {
-            
             steps {
-                sh 'python3 install -r requirements.txt'
+                git url: 'https://github.com/blossom2016/Jenkinsfile.git',branch:'main'
+                 sh 'chmod +x python_homework1.py'
+            }
+        }
+        stage('test'){
+            steps{
+                echo "Hello world"
+                sh 'python3 python_homework1.py'
+                
             }
         }
     }

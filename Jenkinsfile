@@ -9,7 +9,7 @@ pipeline {
                      }
                  }
             steps {
-                sh 'python --version'
+                sh 'python --version python_homework1.py'
             }
         }
     }
